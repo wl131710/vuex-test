@@ -4,9 +4,10 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import storeModel from './common/store.js'
+import util from './common/util.js'
 import vuex from 'vuex'
 Vue.use(vuex)
-
+Vue.use(util)
 Vue.config.productionTip = false
 // Vue.config.devtools = true
 /* eslint-disable no-new */

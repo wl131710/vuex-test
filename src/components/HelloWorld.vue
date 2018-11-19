@@ -12,14 +12,17 @@
     <button @click="clickMeModel()">点我Model</button>
     <button @click="clickMeModelAction()">点我ModelAction</button>
     <button @click="updateState()">严格模式下修改状态报错</button>
+    <button @click="testVue()">测试插件</button>
     <test></test>
   </div>
 </template>
 
 <script>
+const methods = { mm:function(){alert('mm')}, bb:function (){alert('bb')}}
 import { mapMutations } from 'vuex'
 import { mapActions } from 'vuex'
 import test from './test'
+//import func from './vue-temp/vue-editor-bridge';
 export default {
   name: 'HelloWorld-test',
   data () {
@@ -29,6 +32,7 @@ export default {
     }
   },
   methods: {
+    ...methods,
       clickMe () {
         this.$store.commit('addCount')
       },    
@@ -65,7 +69,10 @@ export default {
         //alert(this.$store.state.a.count)
         alert(this.$store.state.test.count)
       },clickMeModelAction () {
+        //this.mm()
         this.changeNamePromise2(this.name).then(()=>{alert(1)})
+      },testVue () {
+        this.myone()
       }
   },
   components:{
