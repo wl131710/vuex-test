@@ -11,6 +11,7 @@
     <button @click="change(name)">点我修改名字哦2</button><input type="text" v-model="name"/><br/>
     <button @click="clickMeModel()">点我Model</button>
     <button @click="clickMeModelAction()">点我ModelAction</button>
+    <button @click="updateState()">严格模式下修改状态报错</button>
     <test></test>
   </div>
 </template>
@@ -30,7 +31,10 @@ export default {
   methods: {
       clickMe () {
         this.$store.commit('addCount')
-      },      
+      },    
+      updateState () {
+        this.$store.state.count = 2
+      },     
       clickMe2 () {
         // this.$store.commit('changeName', this.name)
         //对象风格的提交方式,提交 mutation 的另一种方式是直接使用包含 type 属性的对象 注意changeName2的方法参数处理必须是json

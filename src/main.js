@@ -18,6 +18,7 @@ const state={
   dolist: [{name:'小明', age:13},{name:'小傻', age:16},{name:'小屁', age:53}]
 }
 var store = new vuex.Store({//创建vuex中的store对象
+  strict: true,  // 在严格模式下，无论何时发生了状态变更且不是由 mutation 函数引起的，将会抛出错误。
   state, 
   //有时候我们需要从 store 中的 state 中派生出一些状态,Getter 会暴露为 store.getters 对象，你可以以属性的形式访问这些值：
   getters: {
