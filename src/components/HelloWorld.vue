@@ -21,7 +21,7 @@ import { mapMutations } from 'vuex'
 import { mapActions } from 'vuex'
 import test from './test'
 export default {
-  name: 'HelloWorld',
+  name: 'HelloWorld-test',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App',
